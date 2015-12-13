@@ -1,26 +1,104 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!doctype html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sample Page</title>
+<meta charset="UTF-8">
+<title>Dating Website</title>
+<style type="text/css">
+	fieldset{
+		background: lightyellow;
+		border: yellow 10px solid;
+		margin-bottom: 10px;
+		width: 720px;
+	}
+	label{
+		width: 180px;
+		display: inline-block;
+		text-align: right;
+		vertical-align: top;
+	}
+	label #gender, label #contact{
+		width:auto;
+	}
+	.red, .blue{
+		display: inline-block;
+		width: 50px;
+		height: auto;
+		text-align: center;
+		vertical-align:top;
+
+	}
+	.red{
+		background: #CC6600;
+	}
+	.blue{
+		background: #0099FF;
+	}
+	textarea{
+		width: 360px;
+		height: 50px;
+	}
+	label:hover, .inputlabel:hover{
+		font-size: 200%;
+	}
+</style>
 </head>
 
 <body>
-<h1>Heading title of our sample page </h1>
-<table border="1">  
-<tr>    
-<td><strong>Sample column</strong></td>    
-<td><strong>Sample column</strong></td>    
-<td><strong>Sample column</strong></td>  
-</tr>  
-<tr>    
-<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat.</td>    
-<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. </td>    
-<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. </td>  
-</tr>
-</table>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. </p>
-</body>
+<h1>Please Enter Your Detail For Our Dating Website!</h1>
 
+<form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+<fieldset>
+	<legend> Your Face</legend>
+	<label for="photo">Your image: </label>
+		<input type="file" id="photo" name="photo" required><br>
+	<label for="preview">Image preview: </label> <img id="preview">
+</fieldset><br>
+<fieldset>
+	<legend> Your General Details</legend>
+	<label for="name">Name: </label>
+		<input type="text" id="name" name="name" placeholder="Your full name" required><br>
+	<label for="gender">Gender: </label>
+		<input type="radio" id="gender" name="gender" value="male" required><span class="inputlabel">Male</span>
+		<input type="radio" id="gender" name="gender" value="female" required><span class="inputlabel">Female</span><br>
+	<label for="age">Age: </label>
+		<input type="number" id="age" name="age" min="0" max="99" step="1" value="18" required><br>
+	<label for="birth">Date of birth: </label>
+		<input type="date" id="birth" name="birth"><br>
+	<label for="color">Favourite color: </label>
+		<input type="color" id="color" name="color"><br>
+	<label for="countries">Which country: </label>
+		<select name="coutries" class="inputlabel">
+			<option id="countries" value="japan">Japan</option>
+			<option id="countries" value="china">China</option>
+			<option id="countries" value="us">United States</option>
+			<option id="countries" value="uk">United Kingdom</option>
+			<option id="countries" value="indonesia">Indonesia</option>
+			<option id="countries" value="no_option">No selection</option>
+		</select><br>
+</fieldset><br>
+<fieldset>
+	<legend> Your Indicators</legend>
+	<label for="height">Height: </label>
+		<span class="red inputlabel">Short</span><input type="range" min="0" max="100" step="1" value="50" id="height" name="height"><span class="blue inputlabel">Tall</span><br>
+	<label for="salary">Salary: </label>
+		<span class="red inputlabel">Poor </span><input type="range" min="0" max="100" step="1" value="50" id="salary" name="salary"><span class="blue inputlabel">Rich</span><br>
+</fieldset><br>
+<fieldset>
+	<legend> Your Contact Information</legend>
+	<label for="email">Email: </label>
+		<input type="email" id="email" name="email" required><br>
+	<label for="mobile">Mobile: </label>
+		<input type="tel" id="mobile" name="mobile"><br>
+	<label for="address">Address: </label>
+		<textarea rows="2" cols="20" name="address"></textarea><br>
+	<label for="contact">Method to contact you: </label>
+		<input type="checkbox" id="contact" name="contact" value="email"><span class="inputlabel">Email </span>
+		<input type="checkbox" id="contact" name="contact" value="whatsapp"><span class="inputlabel">Whatsapp </span>
+		<input type="checkbox" id="contact" name="contact" value="chat"><span class="inputlabel">In-app chat</span>
+</fieldset><br>
+<input type="submit" value="Submit">
+</form>
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</body>
 </html>
+
